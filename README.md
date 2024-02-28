@@ -2,5 +2,6 @@
 To be coming soon. Stay tuned!
 [arxiv](https://arxiv.org/abs/2402.08359)
 
-Good news! Qur paper has been accepted to **CVPR 2024**.
-The code is expected to be released this week!
+Good news! Our paper has been accepted to **CVPR 2024**.
+
+I am currently busy with a research deadline. So the code is expected to be released next month!
