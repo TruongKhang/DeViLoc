@@ -4,4 +4,4 @@ To be coming soon. Stay tuned!
 
 Good news! Our paper has been accepted to **CVPR 2024**.
 
-I am currently busy with a research deadline. So the code is expected to be released next month!
+I am currently busy with a research deadline. So the code is expected to be released in March!
