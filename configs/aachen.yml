@@ -1,0 +1,21 @@
+dataset:
+    root_dir: "data/aachen"
+    name: "aachen"
+    img_pairs: "data/aachen/pairs/pairs-query-netvlad50.txt"
+    sfm_model: "data/aachen/3D-models/aachen_v_1_0"
+    query_intrinsics: ["data/aachen/queries/day_time_queries_with_intrinsics.txt", "data/aachen/queries/night_time_queries_with_intrinsics.txt"]
+    test:
+        topk_retrieval: 50
+        img_size: 864
+        n_pts: [50, 10000]
+
+model:
+    matcher:
+        topicfm: {"match_coarse": {"thr": 0.25, "border_rm": 2}, "coarse": {"nhead": 2, "attention": "full", "n_samples": 0}}
+        pretrained_ckpt: "third_party/feat_matcher/TopicFM/pretrained/topicfm_fast.ckpt"
+        n_matches: 5000
+    qt_size: 3
+    conf_thr: 0.5
+
+trainer:
+    ransac_thr: 15

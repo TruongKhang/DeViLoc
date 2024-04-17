@@ -1,0 +1,20 @@
+dataset:
+    root_dir: "data/RobotCarSeasons"
+    name: "robotcar"
+    img_pairs: "data/RobotCarSeasons/pairs-query-cosplace20.txt"
+    sfm_dir: "3D-models/individual/colmap_reconstructions"
+    query_dir: "3D-models/individual/queries_per_location"
+    test:
+        topk_retrieval: 20
+        img_size: 864
+        n_pts: [50, 10000]
+
+model:
+    matcher:
+        topicfm: {"match_coarse": {"thr": 0.25, "border_rm": 2}, "coarse": {"nhead": 2, "attention": "full", "n_samples": 0}}
+        pretrained_ckpt: "third_party/feat_matcher/TopicFM/pretrained/topicfm_fast.ckpt"
+    qt_size: 4
+    conf_thr: 0.5
+
+trainer:
+    ransac_thr: 15

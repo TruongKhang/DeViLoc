@@ -1,0 +1,21 @@
+dataset:
+    root_dir: "data/cambridge"
+    name: "cambridge"
+    __classname__: "Cambridge"
+    scenes: ["ShopFacade"] # ["GreatCourt", "KingsCollege", "OldHospital", "StMarysChurch"]
+    pair_files: "pairs-query-netvlad20.txt"
+    test:
+        topk_retrieval: 20
+        img_size: 864
+        n_pts: [50, 10000]
+
+model:
+    matcher:
+        # topicfm: {"match_coarse": {"thr": 0.25, "border_rm": 2}, "coarse": {"nhead": 8, "attention": "linear", "n_topic_transformers": 2, "n_samples": 8}}
+        topicfm: {"match_coarse": {"thr": 0.25, "border_rm": 2}, "coarse": {"nhead": 2, "attention": "full", "n_samples": 0}}
+        pretrained_ckpt: "third_party/feat_matcher/TopicFM/pretrained/topicfm_fast.ckpt"
+        n_matches: 5000
+    qt_size: 4
+
+trainer:
+    ransac_thr: 20

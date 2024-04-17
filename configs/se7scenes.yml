@@ -1,0 +1,21 @@
+dataset:
+    root_dir: "data/7scenes"
+    name: "7scenes"
+    __classname__: "Se7Scenes"
+    scenes: ["chess", "fire", "heads", "office", "pumpkin", "redkitchen", "stairs"]
+    pair_dir: "data/7scenes/7scenes_densevlad_retrieval_top_10"
+    pair_files: ["chess_top10.txt", "fire_top10.txt", "heads_top10.txt", "office_top10.txt", "pumpkin_top10.txt", "redkitchen_top10.txt", "stairs_top10.txt"]
+    test:
+        topk_retrieval: 10
+        img_size: 640
+        n_pts: [50, 5000]
+
+model:
+    matcher:
+        topicfm: {"match_coarse": {"thr": 0.3, "border_rm": 2}, "coarse": {"nhead": 2, "attention": "full", "n_samples": 0}}
+        pretrained_ckpt: "third_party/feat_matcher/TopicFM/pretrained/topicfm_fast.ckpt"
+        n_matches: 5000
+    qt_size: 2
+
+trainer:
+    ransac_thr: 20

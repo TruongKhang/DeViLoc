@@ -1,0 +1,22 @@
+dataset:
+    root_dir: "data/ethms/data"
+    name: "ethms"
+    img_pairs: "data/ethms/data/query/pairs-query-netvlad10.txt" 
+    # sfm_model_dir: "data/ethms/data/mapping/sfm_spsg"
+    sfm_model_dir: "data/ethms/data/mapping/points_sift_nn/sfm_model" 
+    db_img_dir: "data/ethms/data/mapping/sensors/records_data"
+    test:
+        topk_retrieval: 10
+        img_size: 1440
+        n_pts: [10, 20000]
+
+model:
+    matcher:
+        # topicfm: {"match_coarse": {"thr": 0.25, "border_rm": 2}, "coarse": {"nhead": 8, "attention": "linear", "n_topic_transformers": 2, "n_samples": 8}}
+        topicfm: {"match_coarse": {"thr": 0.25, "border_rm": 2}, "coarse": {"nhead": 2, "attention": "full", "n_samples": 0}}
+        pretrained_ckpt: "third_party/feat_matcher/TopicFM/pretrained/topicfm_fast.ckpt"
+        n_matches: 5000
+    qt_size: 4
+
+trainer:
+    ransac_thr: 20
