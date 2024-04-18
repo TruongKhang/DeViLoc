@@ -7,7 +7,7 @@ dataset:
     test:
         topk_retrieval: 50
         img_size: 864
-        n_pts: [50, 10000]
+        n_pts: [50, 8000]
 
 model:
     matcher:
