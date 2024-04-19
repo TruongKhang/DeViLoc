@@ -38,7 +38,7 @@ The datas in the `preprocessed` folder is uploaded [here](https://drive.google.c
 
 After downloading all data, you can change some training parameters in `scripts/train_megadepth.sh` and then run this script to train models
 
-    bash scripts/train_megadepth.sh
+    bash scripts/train_megadepth.sh configs/megadepth.yml
 
 
 ## Evaluation
