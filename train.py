@@ -7,16 +7,15 @@ from loguru import logger as loguru_logger
 from yacs.config import CfgNode
 
 import pytorch_lightning as pl
-from pytorch_lightning.utilities import rank_zero_only
 from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.callbacks import ModelCheckpoint, LearningRateMonitor
 from pytorch_lightning.strategies import DDPStrategy
 
-from vlocnext.default_config import get_cfg_defaults
-from vlocnext.utils.profiler import build_profiler
-from vlocnext.datasets.pl_dataloader import PLDataModule
-from vlocnext.trainers.pl_trainer import PL_Trainer
-from vlocnext.utils.misc import update_config
+from deviloc.default_config import get_cfg_defaults
+from deviloc.utils.profiler import build_profiler
+from deviloc.datasets.pl_dataloader import PLDataModule
+from deviloc.trainers.pl_trainer import PL_Trainer
+from deviloc.utils.misc import update_config
 
 
 def parse_args():
