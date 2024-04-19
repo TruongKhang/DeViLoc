@@ -9,7 +9,7 @@ dataset:
         topk_retrieval: 2
         n_queries_per_scene: 200
         data_aug: true 
-        img_size: 800
+        img_size: 864
         n_pts: [50, 8000] 
         random_topk: true
     val:
@@ -34,7 +34,7 @@ model:
         # topicfm: {"match_coarse": {"thr": 0.25}, "coarse": {"nhead": 8, "attention": "linear", "n_topic_transformers": 2}}
         topicfm: {"match_coarse": {"thr": 0.25, "border_rm": 2}, "coarse": {"nhead": 2, "attention": "full", "n_samples": 0}}
         pretrained_ckpt: "third_party/feat_matcher/TopicFM/pretrained/topicfm_fast.ckpt"
-    qt_size: 1
+    qt_size: 4
 
 trainer:
     ransac_thr: 5
