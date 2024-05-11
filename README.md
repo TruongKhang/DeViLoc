@@ -4,10 +4,9 @@ Our paper is accepted for an **oral presentation (top 3.3%)** at CVPR 2024. PDF 
 ![Alt Text](demo_deviloc_short.gif)
 
 ## Requirements
-All experiments were implemented under Ubuntu 16.04 and NVIDIA TESLA V100/NVIDIA GeForce RTX 3090 with cuda version of 11.3/11.6.
-Note that the results might be different when using different GPU architecture.
+All experiments were implemented under Ubuntu 16.04 and NVIDIA TESLA V100/NVIDIA GeForce RTX 3090 with the cuda version of 11.3/11.6.
 
-To setup working environment, you need to create a virtual Python environment using Conda and then install required packages using pip
+To setup working environment, you need to create a virtual Python environment using Conda and then install the required packages using pip
 
     conda create -n dvl_env python=3.8 -c anaconda
     conda activate dvl_env
@@ -24,7 +23,7 @@ Next, clone the feature matching model [TopicFM](https://github.com/TruongKhang/
 We train our network on the [MegaDepth](https://www.cs.cornell.edu/projects/megadepth/) dataset. 
 Note that you just need to download the file `MegaDepth v1 Dataset (tar.gz, 199 GB)` from the official website.
 
-We recommend to store your training data in `data/megadepth` folder. The structure of this folder looks like this:
+We recommend storing your training data in `data/megadepth` folder. The structure of this folder looks like this:
 ```
 data
 ├── megadepth
@@ -34,7 +33,7 @@ data
         └── megadepth_2d3d_q500ov0.2-1.0covis3-15.npy
 ```
 
-The datas in the `preprocessed` folder is uploaded [here](https://drive.google.com/drive/folders/1CxLrXnt5JpWe9WdweCs3dE22Eg6mFvZA?usp=sharing)
+The data in the `preprocessed` folder is uploaded [here](https://drive.google.com/drive/folders/1CxLrXnt5JpWe9WdweCs3dE22Eg6mFvZA?usp=sharing)
 
 After downloading all data, you can change some training parameters in `scripts/train_megadepth.sh` and then run this script to train models
 
@@ -44,7 +43,7 @@ After downloading all data, you can change some training parameters in `scripts/
 ## Evaluation
 
 ### 7scenes
-Download dataset and save it into the folder `data`. This script are provided by [HLoc](https://github.com/cvg/Hierarchical-Localization).
+Download the dataset and save it into the folder `data`. This script are provided by [HLoc](https://github.com/cvg/Hierarchical-Localization).
 
     bash scripts/download_7scenes.sh
 
