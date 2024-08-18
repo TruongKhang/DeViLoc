@@ -17,7 +17,6 @@ Next, clone the feature matching model [TopicFM](https://github.com/TruongKhang/
 
     mkdir third_party/feat_matcher && cd third_party/feat_matcher
     git clone https://github.com/TruongKhang/TopicFM.git
-    cd TopicFM && git checkout dev_2
 
 ## Training
 We train our network on the [MegaDepth](https://www.cs.cornell.edu/projects/megadepth/) dataset. 
